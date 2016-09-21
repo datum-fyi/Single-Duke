@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document Settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- Page Title -->
+    <title>Stamina - Blog Template for Traveler & Storyteller</title>
+
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.jpg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- HTML5 shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.js"></script>
+    <![endif]-->
+
+    <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+  <style type="text/css">
+    .chart
+    {
+      height:500px;
+      width: 1000px;
+    }
+    .bar
+    {
+        background-color: red;
+    }
+    .button
+    {
+        background-color: red;
+        height:50px;
+        width: 50px;
+        margin-left: 50px;
+    }
+    .tooltip 
+    {
+      background: #eee;
+      box-shadow: 0 0 5px #999999;
+      color: #333;
+      display: none;
+      font-size: 12px;
+      left: 130px;
+      padding: 10px 0px;
+      position: absolute;
+      text-align: center;
+      top: 95px;
+      width: 275px;
+      z-index: 10;
+    }
+
+  </style>
+</head>
+
+<body>
+<!--// Pre-Loader -->
+<div id="preloader">
+    <div id="preloader-center">
+        <div id="preloader-center-absolute">
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+        </div>
+    </div>
+</div>
+
+<!--//site-nav//-->
+<aside class="site-nav">
+    <div class="off-canvas-inner">
+        <!--//Header//-->
+        <header class="header">
+            <h2 class="text-uppercase widget-title pull-left">Navigation</h2>
+            <button type="button" class="close-btn pull-right"><i class="icon fa fa-close"></i></button>
+        </header>
+        <!--//End Header-->
+        <!--//Menu//-->
+        <div class="widget menu">
+            <div class="widget-menu text-uppercase">
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="show-menu-1"><a href="#">Home layouts <i class="fa fa-angle-down"></i></a>
+                        <ul class="sub-menu-1">
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="home-2.html">Home 2</a></li>
+                            <li><a href="home-3.html">Home 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="contact.html">Contact me</a></li>
+                    <li><a href="category.html">Category</a></li>
+                    <li><a href="about-me.html">about me</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="author-template.html">Author Template</a></li>
+                    <li><a href="404.html">404 Page</a></li>
+                    <li><a href="#">Search Result</a></li>
+                    <li class="show-menu-2"><a href="#">Features <i class="fa fa-angle-down"></i></a>
+                        <ul class="sub-menu-2">
+                            <li><a href="single-blog.html" class="active">Single Blog</a></li>
+                            <li><a href="gallery.html">GALLERY POST</a></li>
+                            <li><a href="#">Video post</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Buy Theme $ 59</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--//End Menu-->
+        <!--//Categories//-->
+        <div class="widget categories">
+            <h3 class="widget-title text-uppercase">Categories</h3>
+            <ul class="widget-menu st-category-menu text-uppercase">
+                <li><a href="category.html">Adventure <span class="pull-right">12</span></a></li>
+                <li><a href="category.html">Art <span class="pull-right">17</span></a></li>
+                <li><a href="category.html">Nature <span class="pull-right">45</span></a></li>
+                <li><a href="category.html">Photo <span class="pull-right">30</span></a></li>
+                <li><a href="category.html">Travel <span class="pull-right">47</span></a></li>
+            </ul>
+        </div>
+        <!--//End Categories-->
+        <!--//Follow @ Instagram//-->
+        <div class="widget instragrams fix">
+            <h3 class="widget-title text-uppercase">Follow @ Instagram</h3>
+            <ul class="widget-instagram text-uppercase">
+                <li><a href="#"><img src="assets/images/st-1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/st-2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/st-3.jpg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/st-4.jpg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/st-5.jpg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/st-6.jpg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/st-7.jpg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/sti-8.jpg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/st-9.jpg" alt=""></a></li>
+            </ul>
+        </div>
+        <!--//Follow @ Instagram-->
+        <!--//Recent Posts//-->
+        <div class="widget">
+            <h3 class="widget-title text-uppercase">Recent Posts</h3>
+
+            <div class="recent-post">
+                <div class="single-recent-post">
+                    <h3 class="text-uppercase"><a href="single-blog.html">Top 10 Bold Ocean Journey </a></h3>
+
+                    <p class="recent-post-date">
+                        August 02, 2016
+                    </p>
+                </div>
+                <div class="single-recent-post">
+
+                    <h3 class="text-uppercase"><a href="single-blog.html">Great Travelling Tips </a></h3>
+
+                    <p class="recent-post-date">
+                        August 02, 2016
+                    </p>
+                </div>
+                <div class="single-recent-post">
+
+                    <h3 class="text-uppercase"><a href="single-blog.html">Why We need Life Jacket? </a></h3>
+
+                    <p class="recent-post-date">
+                        August 02, 2016
+                    </p>
+                </div>
+                <div class="single-recent-post">
+
+                    <h3 class="text-uppercase"><a href="single-blog.html">Best Tourist Places</a></h3>
+
+                    <p class="recent-post-date">
+                        August 02, 2016
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--//subscribe//-->
+        <div class="widget">
+            <h3 class="widget-title text-uppercase">Our Newsletter</h3>
+
+            <form class="st-subscribe st-search">
+                <i class="fa fa-envelope-o"></i>
+                <input type="email" placeholder="Email Address">
+            </form>
+        </div>
+        <!--//subscribe-->
+        <!--//Search//-->
+        <div class="widget">
+            <h3 class="widget-title text-uppercase">Search widget</h3>
+
+            <form class="st-search">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </form>
+        </div>
+        <!--//End Search-->
+        <div class="widget scroll-top">
+            <a class="st-top" href="#top"> Back to Top</a>
+        </div>
+    </div>
+</aside>
+<!--//home//-->
+<div class="st-home" id="home">
+    <nav class="top-nav">
+        <div class="logo pull-left"><h1><a href="index.html"><img src="assets/images/logo.png" alt="stamina"></a></h1>
+        </div>
+        <button type="button" class="navbar-toggle show-btn"><i class="fa fa-navicon"></i></button>
+    </nav>
+    <div class="mask"></div>
+    <div class="st-canvas">
+        <div class="st-content-wrap">
+            <!--//Content Area//-->
+            <div class="single-home-area section-home-area section-home-area single-page-home">
+
+                <div class="container">
+                    <div class="home-content text-center">
+                        <h4 class="post-date">September 22, 2016 | A.Martin | <a href="">Lessons</a></h4>
+
+                        <h2 class="text-uppercase blog-heading">How to win the 2015 UK General Election
+                        </h2>
+                        <a href="#blog" class="scroll-down-arrow scroll-top text-uppercase"><span><i
+                                class="fa fa-angle-down"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//blog area//-->
+<div id="blog" class="blog-area">
+    <div class="container">
+        <div class="blog-header text-center">
+            <h2 class="text-uppercase"><a href=""><img src="assets/images/author-tittle.jpg" alt=""></a>Story Written by
+               A. Martin</h2>
+        </div>
+        <div class="blog-content-top">
+            <p> As always, a question. How many votes were actually required to win the UK General Elction
+                in 2015? The widely reported figures are that the Conservative Party, the party that secured the majority
+                of the seats in parliment won 11.3 million, or 36.9% of the popular vote. This translated into 330 of the 650
+                possible seats.
+
+            </p>
+        </div>
+        <div class="blog-content-bottom">       
+            <p>
+                However, this is not what I asked. How many of those votes contributed to the victory? After all, in the UK we use the 'First Past the Post' method of voting, the winning candidate is the one who recieved the most votes, even if that is not a majority. You need just win one more vote than second place, and all the other votes are effectively worthless. (Note: This is just from the persepctive of finding out who won the seat, there are many reasons why these 'extra' votes are important, but that is not for now)</p>
+
+            <p>
+                For this analysis, I am looking at the <a href="http://www.data.parliament.uk/dataset/general-election-2015">Official General Election Data</a> and will be focusing on counting how many votes cast were needed to get a Conservative Majority and Conservative Minority (with help from UKIP) governments.
+                </p>
+
+            <p>
+                To start, lets look at a Conservative Majority. For this we need to know the minimum number of parlimentary seats, which at first glance may be 326 (1 more than half all of the available seats). However, with the Speaker of the House, their three deputies and Sinn Fein (who refuse to take their seats in Parliment) the magic number is 322. So, how will this analysis work?</p>
+
+            <div class="list-content">
+                <ol>
+                    <li><p>Take the 322 constituencies won by the Conservatives with the lowest amount of votes.</p></li>
+                    <li><p>For each of these, take the number of votes won by second place and add one vote.</p></li>
+                    <li><p>Sum up the votes from these constituencies for a grand total of neccessary votes.</p></li>
+                </ol>
+            </div>
+  
+            <h4>
+                This dataset is not perfect, nor is it complete. In fact it has data for just 102 countries, approximately half
+                of all soverign states.
+            </h4>
+
+            <p>
+                So immediately we know our analysis is probably not going to be able to draw universal conclusions, especially
+                as a quick look through the data shows that this information is not collected on a yearly basis, and some countries have not responded in over two decades. I had to make some very harsh culls to this data to keep it
+                relevant but at the same time usable. The set for the charts below includes just 51 countries.
+            </p>
+
+            <p>
+                Now, we turn to three of the explanatory variables I am using in this analysis: 'GDP per Capita', 'Nutritional and Basic Medical Care' and 'Education Rate'. Before I get into the specifics of these three, here is a scatter graph plotting these potential causes against 'Justification'.
+            </p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-sm-12">
+                <div class="blog-img">
+                    <div class="chart" id="scatter_chart"></div>
+<div id="button_edu" class="button">EDU</div>
+<div id="button_nut" class="button">NUT</div>
+<div id="button_gdp" class="button">GDP</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="blog-content-bottom">
+            <p> One thing instantly pops out when plotting 'Education Rate' and 'Nutritional and Basic Medical Care'. As
+                metrics - they are just awful. They do nothing to explain the disparity between why some populations think 
+                women beating is acceptable, and others not.</p>
+
+            <p> To be more precise, 'Education Rate' is defined by <a href="http://data.worldbank.org/indicator/SE.SEC.NENR">
+            UNESCO</a> as 'The ratio of children of official school age who are enrolled in school to the population of the corresponding official school age.' This dataset looks specifically at secondary level education, as access to this
+            is more of an indicator (in this day and age) of the country of a whole. </p>
+
+            <p> 'Nutritional and Basic Medical Care' is a more subjective metric, as it was one of the factors used in the 
+            <a href="http://www.socialprogressimperative.org/">Social Progress Index</a> it itself is comprised of metrics
+            such as undernourishment, child mortality and infectious diseases. A bit of a left field choice when looking at 
+            justification of violence against women but it does make for some interesting Exploratory Data Analysis.</p>
+
+            <h4>
+                So, intital thoughts? It would seem GDP per capita has a strong relationship with Justification. Could 
+                throwing money at the problem work?
+            </h4><p> </p>
+
+            <p> Looking at the graph, it would seem there is a downward trend line, and if anything it is exponentially
+                decreasing. There is a snag however, many Africa nations (in blue) are making a vertical path up the grath,
+                and American and European nations (in red) are making a horizontal path down the bottom. What if it is actually culture and location that are creating this disparity, and not GDP?</p>
+
+
+            <p> So we turn to an old friend, a regression analysis, to see how much of the data can be explained by location, how
+                much by GDP and are either of these statistically significant? </p>
+
+
+                1. redo regression with region as variable
+                2. create fuller dataset with justification/region/gdp only
+                3. re-redo regression
+                4. plot that on world map
+
+
+            <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
+                dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
+                luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+                consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+                erat volutpat.
+
+            </p>
+
+            <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+                ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+                consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
+                qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+            </p>
+
+            <p> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+            </p>
+
+            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                eu feugiat nulla facilisis.</p>
+
+            <div class="chart" id="map_chart"></div>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur.</p>
+
+            <div class="blog-tag-name">
+                <span class="text-uppercase"> Tagged:</span>
+                <a href=""> Hill,</a>
+                <a href="">Trip,</a>
+                <a href="">Sydney</a>
+            </div>
+        </div>
+        <div class="row no-gutter post-navi">
+            <div class="col-sm-4">
+                <div class="prev-post single-navi text-center">
+                    <a href="">
+                        <p>Previous Post</p>
+
+                        <h3 class="text-uppercase">After the Dream and the Sip</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="share-option single-navi text-center">
+                    <p>Share this Post</p>
+                    <ul>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href=""><i class="fa fa-heart-o"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="next-post text-center single-navi">
+                    <a href="">
+                        <p>Next Post</p>
+
+                        <h3 class="text-uppercase">The Eastern Place's Scar</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="related-post text-uppercase">
+            <h2 class="text-center title">Read some related posts</h2>
+
+            <div class="row no-gutter">
+                <div class="col-sm-4">
+                    <div class="single-blog-post re post-2 fix text-center">
+                        <img src="assets/images/post-7.jpg" alt="">
+
+                        <div class="post-overlay text-center">
+                            <h4 class="post-date">August 24, 2016 | John Doe | Travel</h4>
+
+                            <h2 class="text-uppercase blog-heading">The Bold trip to Australia</h2>
+
+                            <a href="" class="read-more text-uppercase">+Read the Story</a>
+                        </div>
+                        <div class="hover-icon fix">
+                            <a href=""><i class="fa fa-heart-o"></i><span>3</span></a>
+                            <a href=""><i class="fa fa-comment"></i><span>4</span></a>
+                        </div>
+                        <a class="post-link" href=""></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="single-blog-post post-2 fix text-center">
+                        <img src="assets/images/post-6.jpg" alt="">
+
+                        <div class="post-overlay text-center">
+                            <h4 class="post-date">August 24, 2016 | John Doe | Travel</h4>
+
+                            <h2 class="text-uppercase blog-heading">The Bold trip to Australia</h2>
+
+                            <a href="" class="read-more text-uppercase">+Read the Story</a>
+                        </div>
+                        <div class="hover-icon fix">
+                            <a href=""><i class="fa fa-heart-o"></i><span>3</span></a>
+                            <a href=""><i class="fa fa-comment"></i><span>4</span></a>
+                        </div>
+                        <a class="post-link" href=""></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="single-blog-post post-2 fix text-center">
+                        <img src="assets/images/post-5.jpg" alt="">
+
+                        <div class="post-overlay text-center">
+                            <h4 class="post-date">August 24, 2016 | John Doe | Travel</h4>
+
+                            <h2 class="text-uppercase blog-heading">The Bold trip to Australia</h2>
+
+                            <a href="" class="read-more text-uppercase">+Read the Story</a>
+                        </div>
+                        <div class="hover-icon fix">
+                            <a href=""><i class="fa fa-heart-o"></i><span>3</span></a>
+                            <a href=""><i class="fa fa-comment"></i><span>4</span></a>
+                        </div>
+                        <a class="post-link" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="comment-area">
+            <h2 class="text-center  text-uppercase title">Read top Comments</h2>
+            <!-- COMMENTS -->
+            <div class="post-comment">
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="media-left text-center">
+                            <a href=""> <img class="media-object img-circle" src="assets/images/comment-avatar.jpg"
+                                             alt=""></a>
+                            <a href="" class="reply-btn text-uppercase"> replay</a>
+                        </div>
+
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="#">Randy Gibson</a></h4>
+
+                            <p class="comment-date">September 06, 2016</p>
+
+                            <p class="comment-p">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, et ea rebum. Stet
+                                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                                ipsum dolor sit amet,
+                            </p>
+
+
+                            <!-- COMMENT REPLY -->
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left text-center">
+                                        <a href=""> <img class="media-object img-circle"
+                                                         src="assets/images/comment-avatar.jpg"
+                                                         alt=""></a>
+                                        <a href="" class="reply-btn text-uppercase"> replay</a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">Randy Gibson</a></h4>
+
+                                        <p class="comment-date">September 06, 2016</p>
+
+                                        <p class="comment-p">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                            eirmod
+                                            tempor
+                                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+                                            eos
+
+                                        </p>
+
+
+                                        <!-- COMMENT REPLY -->
+                                        <ul class="media-list">
+                                            <li class="media">
+                                                <div class="media-left text-center">
+                                                    <a href=""> <img class="media-object img-circle"
+                                                                     src="assets/images/comment-avatar.jpg"
+                                                                     alt=""></a>
+                                                    <a href="" class="reply-btn text-uppercase"> replay</a>
+                                                </div>
+
+                                                <div class="media-body">
+                                                    <h4 class="media-heading"><a href="#">Randy Gibson</a></h4>
+
+                                                    <p class="comment-date">September 06, 2016</p>
+
+                                                    <p class="comment-p">
+                                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                        diam nonumy eirmod
+                                                        tempor
+                                                        invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                        voluptua. At vero eos
+                                                        et
+
+                                                    </p>
+
+
+                                                    <!-- COMMENT REPLY -->
+
+                                                    <!-- END COMMENT REPLY -->
+                                                </div>
+                                            </li>
+                                            <li class="media">
+                                                <div class="media-left text-center">
+                                                    <a href=""> <img class="media-object img-circle"
+                                                                     src="assets/images/comment-avatar.jpg"
+                                                                     alt=""></a>
+                                                    <a href="" class="reply-btn text-uppercase"> replay</a>
+                                                </div>
+
+                                                <div class="media-body">
+                                                    <h4 class="media-heading"><a href="#">Randy Gibson</a></h4>
+
+                                                    <p class="comment-date">September 06, 2016</p>
+
+                                                    <p class="comment-p">
+                                                        accusam et justo duo dolores et ea rebum. Stet clita kasd
+                                                        gubergren, no sea
+                                                        takimata
+                                                        sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                                                        amet, et ea rebum.
+                                                        Stet
+                                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                                                        dolor sit amet.
+                                                        Lorem
+                                                        ipsum dolor sit amet,
+                                                    </p>
+
+
+                                                    <!-- COMMENT REPLY -->
+
+                                                    <!-- END COMMENT REPLY -->
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- END COMMENT REPLY -->
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <!-- END COMMENT REPLY -->
+                        </div>
+
+                    </li>
+
+                    <li class="media">
+                        <div class="media-left text-center">
+                            <a href=""> <img class="media-object img-circle"
+                                             src="assets/images/comment-avatar.jpg"
+                                             alt=""></a>
+                            <a href="" class="reply-btn text-uppercase"> replay</a>
+                        </div>
+
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="#">Randy Gibson</a></h4>
+
+                            <p class="comment-date">September 06, 2016</p>
+
+                            <p class="comment-p">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, et ea rebum.
+                                Stet
+                                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                Lorem
+                                ipsum dolor sit amet,
+                            </p>
+
+
+                            <!-- COMMENT REPLY -->
+
+                            <!-- END COMMENT REPLY -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- END COMMENTS -->
+            <div id="comment-form">
+                <h2 class="text-center text-uppercase title">Write your experinces</h2>
+
+                <form class="contact-form" id="ContactForm" method="post"><!--comment form-->
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Name *</label>
+                                <input type="text" name="Name" class="form-control" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>E-mail *</label>
+                                <input type="email" name="Email" class="form-control" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Website url</label>
+                                <input type="text" name="Subject" class="form-control" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Comment</label>
+                                <textarea class="form-control" name="Comment" rows="10" placeholder=""
+                                          required></textarea>
+                            </div>
+                            <button type="submit" class="btn-send">Submit your opinion</button>
+                        </div>
+                    </div>
+                </form>
+                <!--end comment form-->
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!--//Footer instragram//-->
+<div>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-sm-12 fix">
+                <div class="instragram-heading text-center text-uppercase">
+                    <h2>Follow @Instagram</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="single-instra">
+                            <a href=""> <img src="assets/images/insta-1.jpg" alt="">
+                                <span class="insta-overlay"></span></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="single-instra">
+                            <a href=""> <img src="assets/images/insta-2.jpg" alt="">
+                                <span class="insta-overlay"></span></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="single-instra">
+                            <a href=""> <img src="assets/images/insta-3.jpg" alt="">
+                                <span class="insta-overlay"></span></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="single-instra">
+                            <a href=""> <img src="assets/images/insta-4.jpg" alt="">
+                                <span class="insta-overlay"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--//Footer top//-->
+<div class="footer-about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-10">
+                <div class="footer-about text-center">
+                    <div class="footer-about-content">
+                        <a href=""><img src="assets/images/ft-logo.png" alt=""></a>
+
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos eaccusam et
+                            justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.</p>
+                    </div>
+                    <div class="footer-social">
+                        <h3 class="text-uppercase">Connected with us</h3>
+                        <ul>
+                            <li><a href="" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="" title="Git"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//footer bottom //-->
+<footer>
+    <div class="container">
+        <p class="pull-left">&copy; 2015 <a href="">Stamina</a>, Designed with <i class="fa fa-heart"></i> by <a href="http://shapedtheme.com">ShapedTheme </a></p>
+        <a class="scroll-top pull-right" href="#home"> Back to Top</a>
+    </div>
+
+</footer>
+<!--//Script//-->
+
+<script type="text/javascript">
+    function draw_scatter(json_data) {
+        "use strict";
+
+        var margin = {top: 20, right: 20, bottom: 20, left: 20},
+            width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+         
+
+        var svg_scatter = d3.select("#scatter_chart")
+            .append("svg")
+            .attr('class', 'svg_scatter')
+            .attr("width", width)
+            .attr("height", height)
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var justification_extent = d3.extent(json_data, function(d) {
+            return d["Justification Percentage"];
+        })
+        var gdp_extent = d3.extent(json_data, function(d) {
+            return d["GDP Capita"] - 200;
+        })
+
+        var education_extent = d3.extent(json_data, function(d) {
+            return d["Education Percentage"]
+        })
+
+        var nutwell_extent = d3.extent(json_data, function(d) {
+            return d["NutWell Score"]
+        })
+
+
+
+        var scatter_x_scale_gdp = d3.scale.linear()
+                                        .domain(gdp_extent)
+                                        .range([50, width]);
+
+        var scatter_x_scale_edu = d3.scale.linear()
+                                        .domain(education_extent)
+                                        .range([50, width]);
+
+        var scatter_x_scale_nut = d3.scale.linear()
+                                        .domain(nutwell_extent)
+                                        .range([50, width]);                                                                
+
+        var scatter_y_scale = d3.scale.linear()
+                                        .domain([100,0])
+                                        .range([0, 400]);
+
+        var y_justification_axis = d3.svg.axis().scale(scatter_y_scale).ticks(10).orient("left");
+        
+        var x_gdp_axis = d3.svg.axis().scale(scatter_x_scale_gdp).orient("bottom");
+
+        var x_edu_axis = d3.svg.axis().scale(scatter_x_scale_edu).orient("bottom");
+
+        var x_nut_axis = d3.svg.axis().scale(scatter_x_scale_nut).orient("bottom");                             
+
+        svg_scatter.selectAll("circle")
+            .data(json_data)
+            .enter()
+            .append("circle")
+            .attr('class', 'bar')
+            .attr('fill', function(d) {
+                    if (d['Region'] == "Asia"){
+                        return "green";
+                    }
+                    else if (d['Region'] == "Africa"){
+                        return "blue";
+                    }
+                    else {
+                        return "red";
+                    }
+            })
+            .attr("r", function(d) {
+                return "4px"; })
+            .attr("cx", function(d) {
+                return scatter_x_scale_gdp(d['GDP Capita']); })
+            .attr("cy", function(d) {
+                return scatter_y_scale(d['Justification Percentage']); })
+            .on('mouseover', function(d) {
+                tooltip.text(d["Country Name"])
+                       .style('display', 'block');
+            })
+            .on('mouseout', function() {
+                tooltip.style('display', 'none');
+            });
+
+        var xAxisGroup = svg_scatter.append("g")
+                            .attr('id', 'xaxis')
+                            .attr("transform", "translate(0," + (height - margin.bottom - margin.top) + ")")
+                            .call(x_gdp_axis);
+
+        var yAxisGroup = svg_scatter.append("g")
+                            .attr("transform", "translate(50," + (margin.bottom) + ")")
+                            .call(y_justification_axis);                          
+
+                                   
+        d3.select('#button_edu').on('mouseover', function(d) {
+                            svg_scatter.selectAll("circle")
+                              .transition()
+                              .duration(500)
+                              .attr("cx", function(d) {
+                                    return scatter_x_scale_edu(d["Education Percentage"]); })
+
+                            svg_scatter.select('#xaxis').call(x_edu_axis)  
+                              
+                          })
+
+        d3.select('#button_nut').on('mouseover', function(d) {
+                            svg_scatter.selectAll("circle")
+                              .transition()
+                              .duration(500)
+                              .attr("cx", function(d) {
+                                    return scatter_x_scale_nut(d["NutWell Score"]); })
+
+                            svg_scatter.select('#xaxis').call(x_nut_axis)  
+                              
+                          })
+
+        d3.select('#button_gdp').on('mouseover', function(d) {
+                            svg_scatter.selectAll("circle")
+                              .transition()
+                              .duration(500)
+                              .attr("cx", function(d) {
+                                    return scatter_x_scale_gdp(d["GDP Capita"]); })
+
+                            svg_scatter.select('#xaxis').call(x_gdp_axis)  
+                              
+                          })
+
+
+        var tooltip = d3.select('#scatter_chart')             
+          .append('div')                             
+          .attr('class', 'tooltip');
+
+        svg_scatter.selectAll('circle').on('mousemove', function(d) {
+          tooltip.style('top', (d3.event.layerY + 10) + 'px')
+            .style('left', (d3.event.layerX + 10) + 'px');
+          });  
+
+
+
+
+
+
+
+
+
+
+
+    }
+        function draw_map(geo_data) {
+        "use strict";
+        var margin = 75,
+            width = 1400 - margin,
+            height = 600 - margin;
+
+        var svg_map = d3.select("#map_chart")
+            .append("svg")
+            .attr("width", width + margin)
+            .attr("height", height + margin)
+            .append('g')
+            .attr('class', 'map');
+
+        var projection = d3.geo.mercator()
+                               .scale(250)
+                               .translate([width / 2, height / 1.6]);
+
+        var path = d3.geo.path().projection(projection);
+
+        var map = svg_map.selectAll('path')
+                     .data(geo_data.features)
+                     .enter()
+                     .append('path')
+                     .attr('d', path)
+                     .style('fill', function(d){
+                        
+                        if ('ex_data' in d){
+                            return 'red'
+                        }
+                        else { return 'green'}
+                     })
+                     .style('stroke', 'black')
+                     .style('stroke-width', 0.5);
+
+
+
+
+
+
+        } 
+</script>
+
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.easing.min.js"></script>
+<script src="assets/js/jquery.nicescroll.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBgdZe2H8dUadI-9HbatiJpIufY6oVWMf4"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    var locations = [
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/fuerteventura.jpg" alt=""> </div> <div class="infobox-text"> <h2>Weekend in Warsaw</h2></div> </div>', 52.2296756, 12.567379999999957, 10],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/barlin.jpg" alt=""> </div> <div class="infobox-text"> <h2>Fuerteventura, Spain</h2></div> </div>', 28.3587436, -14.053675999999996, 9],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/barlin.jpg" alt=""> </div> <div class="infobox-text"> <h2>Trip to Italy: Rome</h2></div> </div>', 41.87194, 12.567379999999957, 8],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/romania.jpg" alt=""> </div> <div class="infobox-text"> <h2>Piatra Craiului, Romania</h2></div> </div>', 45.503807, 25.232807999999977, 7],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/barlin.jpg" alt=""> </div> <div class="infobox-text"> <h2>Fuerteventura, Spain</h2></div> </div>', 28.3587436, -14.053675999999996, 6],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/romania.jpg" alt=""> </div> <div class="infobox-text"> <h2>Things to Do in Amsterdam</h2></div> </div>', 52.3702157, 4.895167899999933, 5],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/barlin.jpg" alt=""> </div> <div class="infobox-text"> <h2>Berlin City Breaks</h2></div> </div>', 52.52000659999999, 13.404953999999975, 4],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/romania.jpg" alt=""> </div> <div class="infobox-text"> <h2>Berlin City Breaks</h2></div> </div>', -33.923036, 151.359052, 5],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/barlin.jpg" alt=""> </div> <div class="infobox-text"> <h2>Berlin City Breaks</h2></div> </div>', -34.028249, 151.157507, 3],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/barlin.jpg" alt=""> </div> <div class="infobox-text"> <h2>Berlin City Breaks</h2></div> </div>', -33.80010128657071, 151.28747820854187, 2],
+        ['<div class="infobox fix"> <div class="image"> <img src="assets/images/fuerteventura.jpg" alt=""> </div> <div class="infobox-text"> <h2>Berlin City Breaks</h2></div> </div>', -33.950198, 151.259302, 1]
+    ];
+
+        d3.json("/data/d3_ready_con.json", function(error, graph) {
+          if (error) return console.error(error);
+          draw_scatter(graph);
+        });
+        d3.json("/data/world_countries_ready.json", function(error, graph) {
+          if (error) return console.error(error);
+          draw_map(graph);
+        });
+    
+
+</script>
+</body>
+</html>
